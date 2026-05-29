@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHP Array and String Operations</title>
+</head>
+<body>
+
+<h2>PHP Array Operations</h2>
+
+<?php
+
+$numbers = array(40, 10, 30, 20);
+$moreNumbers = array(50, 60);
+
+// Sorting
+sort($numbers);
+echo "Sorted Array:<br>";
+print_r($numbers);
+
+echo "<br><br>";
+
+// Searching
+if (in_array(30, $numbers)) {
+    echo "30 found in array";
+} else {
+    echo "30 not found in array";
+}
+
+echo "<br><br>";
+
+// Merging
+$mergedArray = array_merge($numbers, $moreNumbers);
+echo "Merged Array:<br>";
+print_r($mergedArray);
+
+echo "<br><br>";
+
+// Regular expression validation
+$email = "student@example.com";
+
+if (preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
+    echo "Valid Email";
+} else {
+    echo "Invalid Email";
+}
+
+echo "<br><br>";
+
+// String manipulation
+$name = "rahul sharma";
+echo "Formatted Name: " . ucwords($name);
+
+echo "<br>";
+
+$domain = substr(strrchr($email, "@"), 1);
+echo "Email Domain: " . $domain;
+
+?>
+
+</body>
+</html>
