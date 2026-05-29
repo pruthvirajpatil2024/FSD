@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Events and Effects</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+#box {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 200px;
+  font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>jQuery Events Example</h2>
+
+<button id="hideBtn">Hide Box</button>
+<button id="showBtn">Show Box</button>
+<button id="toggleBtn">Slide Toggle</button>
+
+<div id="box">Hello</div>
+
+<script>
+$(document).ready(function() {
+
+  $("#hideBtn").click(function() {
+    $("#box").fadeOut();
+  });
+
+  $("#showBtn").click(function() {
+    $("#box").fadeIn();
+  });
+
+  $("#toggleBtn").click(function() {
+    $("#box").slideToggle();
+  });
+
+  $("#box").hover(
+    function() {
+      $(this).css("background-color", "orange");
+    },
+    function() {
+      $(this).css("background-color", "skyblue");
+    }
+  );
+
+});
+</script>
+
+</body>
+</html>
