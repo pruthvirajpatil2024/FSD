@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>JavaScript Functions</title>
+<title>jQuery Events</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+#box {
+  width: 200px;
+  height: 100px;
+  background-color: skyblue;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 100px;
+}
+</style>
 </head>
 <body>
-<h2>Functions Example</h2>
-<p>Open Console to see output</p>
+
+<h2>jQuery Dynamic Webpage</h2>
+
+<input type="text" id="name" placeholder="Enter name">
+<p id="output"></p>
+
+<button id="btn">Click Me</button>
+
+<div id="box">Hover Me</div>
+
 <script>
-// Normal Function
-function greet() {
-   console.log("Hello from Normal Function");
-}
-greet();
-// Anonymous Function
-let msg = function() {
-   console.log("Hello from Anonymous Function");
-}
-msg();
-// Arrow Function
-let add = (a, b) => {
-   console.log("Sum =", a + b);
-}
-add(5, 3);
-// Callback Function
-function processUser(callback) {
-   callback();
-}
-processUser(function() {
-   console.log("Hello from Callback Function");
+$(document).ready(function() {
+
+  $("#btn").click(function() {
+    $("#box").slideToggle();
+  });
+
+  $("#box").hover(function() {
+    $(this).css("background-color", "orange");
+  }, function() {
+    $(this).css("background-color", "skyblue");
+  });
+
+  $("#name").keyup(function() {
+    $("#output").text("You typed: " + $(this).val());
+  });
+
 });
 </script>
+
 </body>
 </html>
