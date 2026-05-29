@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hoisting Example</title>
+</head>
+<body>
+<h2>JavaScript Hoisting</h2>
+<p>Open Console to see output</p>
+<script>
+// Variable Hoisting
+console.log(a);
+var a = 10;
+// Function Hoisting
+hello();
+function hello() {
+ console.log("Function Hoisted Successfully");
+}
+// Scope Example
+{
+ var x = 5;
+ let y = 10;
+ const z = 15;
+} 
+console.log("var x =", x);
+// console.log(y); // Error
+// console.log(z); // Error
+</script>
+</body>
+</html>
